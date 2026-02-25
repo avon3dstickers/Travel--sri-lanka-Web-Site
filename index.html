@@ -117,12 +117,20 @@
                         info@tuskerways.com
                     </a>
                 </div>
-                <!-- Branding -->
-                <div class="mb-10">
-                    <span
-                        class="text-primaryTeal font-display font-bold tracking-[0.4em] uppercase text-sm border-b-2 border-primaryTeal pb-2">
-                        Tusker Ways
-                    </span>
+                <!-- Branding/Logo Section -->
+                <div class="mb-10 animate-fade-in flex flex-col items-center justify-center min-h-[150px]">
+                    <img src="logo.png" alt="Tusker Ways Logo"
+                        class="h-auto max-w-[320px] md:max-w-[480px] mx-auto block"
+                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');">
+                    <!-- Fallback Logo: This shows ONLY if logo.png is missing -->
+                    <div class="hidden flex-col items-center">
+                        <div class="text-primaryTeal font-display font-bold tracking-[0.3em] uppercase text-2xl mb-2">
+                            Tusker <span class="text-white">Ways</span>
+                        </div>
+                        <p class="text-white/40 text-xs uppercase tracking-widest mt-2 border-t border-white/10 pt-2">
+                            [ Please save your logo as logo.png in the project folder ]
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Headline -->

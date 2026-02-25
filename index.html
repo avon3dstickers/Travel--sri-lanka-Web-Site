@@ -43,10 +43,10 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 25px 50px -12px rgba(0, 191, 165, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
         @keyframes subtleZoom {
@@ -102,13 +102,21 @@
 <body class="antialiased min-h-screen flex items-center justify-center p-6 sm:p-12 overflow-hidden">
 
     <!-- Background Layer -->
-    <div id="bgLayer" class="fixed inset-0 z-0 bg-elephant animate-zoom"></div>
+    <div id="bgLayer"
+        class="fixed inset-4 sm:inset-8 z-0 bg-elephant animate-zoom rounded-[2rem] sm:rounded-[3rem] shadow-2xl"></div>
 
     <!-- Main Content Container -->
-    <main class="relative z-10 w-full max-w-4xl">
-        <div class="glass-card rounded-[2.5rem] overflow-hidden shadow-2xl animate-fade-in-up">
+    <main class="relative z-10 w-full max-w-2xl">
+        <div class="glass-card rounded-[2.5rem] overflow-hidden shadow-2xl animate-fade-in-up border border-white/20">
 
-            <div class="p-8 md:p-16 flex flex-col items-center text-center">
+            <div class="p-8 md:p-12 flex flex-col items-center text-center">
+                <!-- Contact Email -->
+                <div class="mb-8">
+                    <a href="mailto:info@tuskerways.com"
+                        class="text-xs md:text-sm font-bold tracking-[0.2em] text-white/40 hover:text-primaryTeal transition-all uppercase border border-white/10 px-4 py-2 rounded-full">
+                        info@tuskerways.com
+                    </a>
+                </div>
                 <!-- Branding -->
                 <div class="mb-10">
                     <span
@@ -118,15 +126,15 @@
                 </div>
 
                 <!-- Headline -->
-                <h1 class="font-display text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-8">
+                <h1 class="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-8">
                     The Most <span class="text-primaryTeal text-glow">Ethical</span> <br> Elephant Experience <br>
-                    <span class="text-3xl md:text-4xl text-slateGrey font-light">Coming Soon</span>
+                    <span class="text-2xl md:text-3xl text-white/70 font-light">Coming Soon</span>
                 </h1>
 
                 <!-- Description -->
-                <p class="text-slateGrey text-lg md:text-xl leading-relaxed mb-12 font-medium max-w-2xl">
+                <p class="text-white/80 text-lg leading-relaxed mb-12 font-medium max-w-xl">
                     We are crafting a unique journey to bring you closer to the majestic giants of Sri Lanka.
-                    <span class="block mt-2 text-gray-800">Stay tuned for an unforgettable adventure.</span>
+                    <span class="block mt-2 text-white">Stay tuned for an unforgettable adventure.</span>
                 </p>
 
                 <!-- Action Section -->
@@ -141,7 +149,7 @@
                             Notify Me
                         </button>
                     </form>
-                    <p class="mt-4 text-xs text-slateGrey uppercase tracking-widest font-bold">Ready to explore? Join
+                    <p class="mt-4 text-xs text-white/60 uppercase tracking-widest font-bold">Ready to explore? Join
                         the waitlist.</p>
                 </div>
 
@@ -151,7 +159,7 @@
 
         <!-- Minimal Footer -->
         <div id="adminTrigger"
-            class="mt-10 text-center text-white text-sm font-medium tracking-wide drop-shadow-md cursor-pointer select-none opacity-80 hover:opacity-100 transition-opacity">
+            class="mt-10 text-center text-white/50 text-xs font-medium tracking-wide drop-shadow-md cursor-pointer select-none hover:opacity-100 transition-opacity">
             &copy; 2026 Tusker Ways Sri Lanka. Committed to Conservation & Ethical Tourism.
         </div>
     </main>

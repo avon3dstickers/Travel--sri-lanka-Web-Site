@@ -35,13 +35,11 @@
         }
 
         .bg-elephant {
-            /* Using the local image name you provided. Save the uploaded image as elephant-bg.jpg */
             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-                url('elephant-bg.jpg');
+                url('https://images.unsplash.com/photo-1581852017103-68ac65514cf7?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            filter: saturate(1.4) contrast(1.1);
-            /* Making it more colorful and vibrant */
+            filter: saturate(1.2) contrast(1.1);
         }
 
         .glass-card {
@@ -61,8 +59,38 @@
             }
         }
 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
         .animate-zoom {
             animation: subtleZoom 25s infinite alternate ease-in-out;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
         }
 
         .text-glow {
@@ -74,7 +102,7 @@
 <body class="antialiased min-h-screen flex items-center justify-center p-6 sm:p-12 overflow-hidden">
 
     <!-- Background Layer -->
-    <div class="fixed inset-0 z-0 bg-elephant animate-zoom"></div>
+    <div id="bgLayer" class="fixed inset-0 z-0 bg-elephant animate-zoom"></div>
 
     <!-- Main Content Container -->
     <main class="relative z-10 w-full max-w-4xl">
@@ -122,11 +150,136 @@
         </div>
 
         <!-- Minimal Footer -->
-        <div class="mt-10 text-center text-white text-sm font-medium tracking-wide drop-shadow-md">
+        <div id="adminTrigger"
+            class="mt-10 text-center text-white text-sm font-medium tracking-wide drop-shadow-md cursor-pointer select-none opacity-80 hover:opacity-100 transition-opacity">
             &copy; 2026 Tusker Ways Sri Lanka. Committed to Conservation & Ethical Tourism.
         </div>
     </main>
 
+    <!-- Admin Panel Modal -->
+    <div id="adminModal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm hidden">
+        <div class="glass-card w-full max-w-md rounded-3xl p-8 bg-white/95 shadow-2xl overflow-hidden animate-fade-in">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-display font-bold text-gray-900">Admin Panel</h2>
+                <button id="closeAdmin" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Background Image
+                        URL</label>
+                    <input type="text" id="bgUrlInput" placeholder="https://example.com/image.jpg"
+                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-100 focus:outline-none focus:border-primaryTeal text-gray-800">
+                </div>
+
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div class="w-full border-t border-gray-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white/95 text-gray-500 font-medium">OR</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Upload New
+                        Image</label>
+                    <label
+                        class="flex flex-col items-center justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-100 border-dashed rounded-xl appearance-none cursor-pointer hover:border-primaryTeal focus:outline-none">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-6 h-6 text-primaryTeal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                            </svg>
+                            <span class="font-medium text-gray-600">Click to upload image</span>
+                        </span>
+                        <input type="file" id="bgFileInput" class="hidden" accept="image/*">
+                    </label>
+                </div>
+
+                <div class="pt-4 flex gap-3">
+                    <button id="saveAdmin"
+                        class="flex-1 bg-primaryTeal hover:bg-[#00a68f] text-white py-4 rounded-xl font-bold transition-all shadow-lg shadow-primaryTeal/20">
+                        Save Changes
+                    </button>
+                    <button id="resetAdmin"
+                        class="px-4 bg-gray-100 hover:bg-gray-200 text-gray-600 py-4 rounded-xl font-bold transition-all">
+                        Reset
+                    </button>
+                </div>
+            </div>
+            <p class="mt-6 text-xs text-center text-gray-400">Settings are saved locally to your browser.</p>
+        </div>
+    </div>
+
+    <script>
+        const adminTrigger = document.getElementById('adminTrigger');
+        const adminModal = document.getElementById('adminModal');
+        const closeAdmin = document.getElementById('closeAdmin');
+        const saveAdmin = document.getElementById('saveAdmin');
+        const resetAdmin = document.getElementById('resetAdmin');
+        const bgUrlInput = document.getElementById('bgUrlInput');
+        const bgFileInput = document.getElementById('bgFileInput');
+        const bgLayer = document.getElementById('bgLayer');
+
+        // Load saved background
+        function loadBackground() {
+            const savedBg = localStorage.getItem('tuskerWaysBg');
+            if (savedBg) {
+                bgLayer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${savedBg}')`;
+            }
+        }
+
+        // Open Admin Panel (Double Click on Footer)
+        adminTrigger.addEventListener('dblclick', () => {
+            adminModal.classList.remove('hidden');
+        });
+
+        // Close Admin Panel
+        closeAdmin.addEventListener('click', () => {
+            adminModal.classList.add('hidden');
+        });
+
+        // Handle File Selection
+        bgFileInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    bgUrlInput.value = event.target.result; // Put base64 in the URL input for convenience
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Save Background
+        saveAdmin.addEventListener('click', () => {
+            const newUrl = bgUrlInput.value.trim();
+            if (newUrl) {
+                localStorage.setItem('tuskerWaysBg', newUrl);
+                bgLayer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${newUrl}')`;
+                adminModal.classList.add('hidden');
+                alert('Background updated successfully! (Saved in your browser)');
+            }
+        });
+
+        // Reset Background
+        resetAdmin.addEventListener('click', () => {
+            localStorage.removeItem('tuskerWaysBg');
+            bgLayer.style.backgroundImage = ''; // Falls back to CSS class
+            adminModal.classList.add('hidden');
+            location.reload();
+        });
+
+        // Initial Load
+        loadBackground();
+    </script>
 </body>
 
 </html>

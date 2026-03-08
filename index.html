@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tusker Ways | Ethical Elephant Experiences</title>
+    <title>Tusker Ways | The Extraordinary Awaits</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,9 +12,9 @@
             theme: {
                 extend: {
                     colors: {
+                        brandGold: '#D4AF37',
+                        brandDark: '#0a0a0c',
                         primaryTeal: '#00BFA5',
-                        slateGrey: '#708090',
-                        lightSilver: '#F2F2F2',
                     },
                     fontFamily: {
                         display: ['Outfit', 'sans-serif'],
@@ -26,43 +26,53 @@
     </script>
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <style>
-        body {
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             font-family: 'Inter', sans-serif;
-            background-color: #000;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
         }
 
-        .bg-elephant {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1581852017103-68ac65514cf7?auto=format&fit=crop&q=80&w=2000');
+        .bg-layer {
+            background-color: #000;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), url('tusker-bg.png');
             background-size: cover;
             background-position: center;
-            filter: saturate(1.2) contrast(1.1);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            filter: contrast(1.1) brightness(0.9);
+            transform: scale(1.05);
+            animation: slowPan 30s infinite alternate ease-in-out;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        @keyframes subtleZoom {
+        @keyframes slowPan {
             from {
-                transform: scale(1);
+                transform: scale(1.05) translate(0, 0);
             }
 
             to {
-                transform: scale(1.08);
+                transform: scale(1.1) translate(-1%, 1%);
             }
         }
 
-        @keyframes fadeInUp {
+        @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
 
             to {
@@ -71,231 +81,171 @@
             }
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+        .animate-fade-up {
+            animation: fadeUp 1s ease-out forwards;
         }
 
-        .animate-zoom {
-            animation: subtleZoom 25s infinite alternate ease-in-out;
+        .delay-100 {
+            animation-delay: 0.1s;
         }
 
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+        .delay-300 {
+            animation-delay: 0.3s;
         }
 
-        .animate-fade-in {
-            animation: fadeIn 0.4s ease-out forwards;
+        .delay-500 {
+            animation-delay: 0.5s;
         }
 
-        .text-glow {
-            text-shadow: 0 0 20px rgba(0, 191, 165, 0.2);
+        .glass-panel {
+            background: rgba(10, 10, 12, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .input-glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-glass::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+        }
+
+        .input-glass:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #e6e6e6, #ffffff);
+            color: #000;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        .floating-logo {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .floating-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Typography adjustments for "luxurious, mysterious" feel */
+        .lux-heading {
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .lux-sub {
+            letter-spacing: 0.05em;
         }
     </style>
 </head>
 
-<body class="antialiased min-h-screen flex items-center justify-center p-6 sm:p-12 overflow-hidden">
+<body class="antialiased min-h-screen flex flex-col items-center justify-between lg:justify-center overflow-x-hidden">
 
-    <!-- Background Layer -->
-    <div id="bgLayer"
-        class="fixed inset-4 sm:inset-8 z-0 bg-elephant animate-zoom rounded-[2rem] sm:rounded-[3rem] shadow-2xl"></div>
+    <!-- Cinematic Background -->
+    <div class="bg-layer"></div>
 
-    <!-- Main Content Container -->
-    <main class="relative z-10 w-full max-w-2xl">
-        <div class="glass-card rounded-[2.5rem] overflow-hidden shadow-2xl animate-fade-in-up border border-white/20">
+    <!-- Top Left Floating Logo -->
+    <header
+        class="absolute top-0 left-0 w-full p-6 md:p-10 z-50 flex flex-col md:flex-row items-center md:items-start justify-between pointer-events-none gap-4">
+        <div
+            class="pointer-events-auto bg-black/30 backdrop-blur-md border border-white/20 p-3 md:p-4 rounded-3xl shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-transform hover:scale-105 duration-300 floating-logo ring-1 ring-white/10">
+            <img src="logo.png" alt="Tusker Ways" class="h-16 md:h-20 lg:h-24 w-auto object-contain">
+        </div>
 
-            <div class="p-8 md:p-12 flex flex-col items-center text-center">
-                <!-- Contact Email -->
-                <div class="mb-8">
-                    <a href="mailto:info@tuskerways.com"
-                        class="text-xs md:text-sm font-bold tracking-[0.2em] text-white/40 hover:text-primaryTeal transition-all uppercase border border-white/10 px-4 py-2 rounded-full">
-                        info@tuskerways.com
-                    </a>
+        <a href="mailto:info@tuskerways.com"
+            class="pointer-events-auto flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white/90 hover:text-white hover:bg-black/60 hover:border-white/30 text-xs md:text-sm font-medium tracking-widest uppercase transition-all duration-300 shadow-lg">
+            <svg class="w-4 h-4 md:w-5 md:h-5 text-brandGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+            </svg>
+            info@tuskerways.com
+        </a>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="w-full flex-1 flex flex-col lg:flex-row relative z-10 pt-32 pb-16 lg:py-0 min-h-[100dvh]">
+
+        <!-- Empty left side for background immersion -->
+        <div class="hidden lg:block lg:w-1/2 relative"></div>
+
+        <!-- Right side typography & form -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center lg:justify-end px-6 md:px-12 lg:pr-24 xl:pr-32">
+
+            <div
+                class="w-full max-w-xl glass-panel p-8 md:p-14 rounded-3xl lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:p-0">
+
+                <!-- Headlines -->
+                <div class="mb-14">
+                    <div
+                        class="inline-block px-5 py-2 border border-brandGold/40 bg-brandGold/10 rounded-full mb-6 shadow-[0_0_20px_rgba(212,175,55,0.15)] animate-fade-up opacity-0">
+                        <span class="text-brandGold text-xs uppercase tracking-[0.25em] font-bold">Coming Soon</span>
+                    </div>
+
+                    <h1
+                        class="font-display lux-heading text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 uppercase animate-fade-up opacity-0 delay-100">
+                        Unveiling <span class="text-brandGold/90 font-light italic">Sri Lanka</span>:<br>
+                        The Extraordinary Awaits.
+                    </h1>
+
+                    <p
+                        class="font-body lux-sub text-lg md:text-xl text-white/80 font-light animate-fade-up delay-300 opacity-0">
+                        A new dawn in immersive, tailor-made travel.
+                    </p>
                 </div>
-                <!-- Branding/Logo Section -->
-                <div class="mb-10 animate-fade-in flex flex-col items-center justify-center min-h-[150px]">
-                    <img src="logo.png" alt="Tusker Ways Logo"
-                        class="h-auto max-w-[320px] md:max-w-[480px] mx-auto block"
-                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');">
-                    <!-- Fallback Logo: This shows ONLY if logo.png is missing -->
-                    <div class="hidden flex-col items-center">
-                        <div class="text-primaryTeal font-display font-bold tracking-[0.3em] uppercase text-2xl mb-2">
-                            Tusker <span class="text-white">Ways</span>
-                        </div>
-                        <p class="text-white/40 text-xs uppercase tracking-widest mt-2 border-t border-white/10 pt-2">
-                            [ Please save your logo as logo.png in the project folder ]
+
+                <!-- Form Area - Centered further down -->
+                <div class="w-full mt-8 animate-fade-up delay-300 opacity-0">
+                    <div class="text-center lg:text-left mb-6">
+                        <p class="text-sm md:text-base text-white/70 uppercase tracking-[0.15em] font-medium">
+                            Be the first to embark on the journey
                         </p>
                     </div>
-                </div>
 
-                <!-- Headline -->
-                <h1 class="font-display text-4xl md:text-5xl font-black text-white leading-tight mb-8">
-                    The Most <span class="text-primaryTeal text-glow">Ethical</span> <br> Elephant Experience <br>
-                    <span class="text-2xl md:text-3xl text-white/70 font-light">Coming Soon</span>
-                </h1>
+                    <form
+                        onsubmit="event.preventDefault(); window.location.href = 'mailto:info@tuskerways.com?subject=Tusker%20Ways%20Waitlist%20Signup&body=Hello,%20please%20add%20my%20email%20address%20to%20the%20waitlist:%0A%0A' + encodeURIComponent(document.getElementById('waitlistEmail').value);"
+                        class="flex flex-col sm:flex-row gap-4 w-full">
+                        <input type="email" id="waitlistEmail" placeholder="Email Address" required
+                            class="input-glass flex-1 px-6 py-4 rounded-xl font-body text-base w-full">
 
-                <!-- Description -->
-                <p class="text-white/80 text-lg leading-relaxed mb-12 font-medium max-w-xl">
-                    We are crafting a unique journey to bring you closer to the majestic giants of Sri Lanka.
-                    <span class="block mt-2 text-white">Stay tuned for an unforgettable adventure.</span>
-                </p>
-
-                <!-- Action Section -->
-                <div class="w-full max-w-lg">
-                    <!-- Updated form action for email notifications -->
-                    <form action="mailto:info@tuskerways.com" method="GET" enctype="text/plain"
-                        class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" name="subject" placeholder="Enter your email" required
-                            class="flex-1 px-8 py-5 rounded-full border-2 border-gray-100 focus:outline-none focus:ring-4 focus:ring-primaryTeal/20 focus:border-primaryTeal transition-all bg-white text-lg">
                         <button type="submit"
-                            class="bg-primaryTeal hover:bg-[#00a68f] text-white px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl shadow-primaryTeal/30 transform hover:-translate-y-1 active:scale-95">
-                            Notify Me
+                            class="btn-premium px-8 py-4 rounded-xl font-display font-semibold uppercase tracking-widest text-sm whitespace-nowrap text-center flex items-center justify-center">
+                            Join the Waitlist
                         </button>
                     </form>
-                    <p class="mt-4 text-xs text-white/60 uppercase tracking-widest font-bold">Ready to explore? Join
-                        the waitlist.</p>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- Minimal Footer -->
-        <div id="adminTrigger"
-            class="mt-10 text-center text-white/50 text-xs font-medium tracking-wide drop-shadow-md cursor-pointer select-none hover:opacity-100 transition-opacity">
-            &copy; 2026 Tusker Ways Sri Lanka. Committed to Conservation & Ethical Tourism.
-        </div>
     </main>
 
-    <!-- Admin Panel Modal -->
-    <div id="adminModal"
-        class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm hidden">
-        <div class="glass-card w-full max-w-md rounded-3xl p-8 bg-white/95 shadow-2xl overflow-hidden animate-fade-in">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-display font-bold text-gray-900">Admin Panel</h2>
-                <button id="closeAdmin" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
+    <!-- Subtle Footer -->
+    <footer class="absolute bottom-6 left-0 w-full text-center z-20 pointer-events-none opacity-50">
+        <p class="text-[10px] md:text-xs font-body tracking-widest uppercase text-white">&copy; 2026 Tusker Ways Sri
+            Lanka</p>
+    </footer>
 
-            <div class="space-y-6">
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Background Image
-                        URL</label>
-                    <input type="text" id="bgUrlInput" placeholder="https://example.com/image.jpg"
-                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-100 focus:outline-none focus:border-primaryTeal text-gray-800">
-                </div>
-
-                <div class="relative">
-                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div class="w-full border-t border-gray-200"></div>
-                    </div>
-                    <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-white/95 text-gray-500 font-medium">OR</span>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider">Upload New
-                        Image</label>
-                    <label
-                        class="flex flex-col items-center justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-100 border-dashed rounded-xl appearance-none cursor-pointer hover:border-primaryTeal focus:outline-none">
-                        <span class="flex items-center space-x-2">
-                            <svg class="w-6 h-6 text-primaryTeal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
-                            </svg>
-                            <span class="font-medium text-gray-600">Click to upload image</span>
-                        </span>
-                        <input type="file" id="bgFileInput" class="hidden" accept="image/*">
-                    </label>
-                </div>
-
-                <div class="pt-4 flex gap-3">
-                    <button id="saveAdmin"
-                        class="flex-1 bg-primaryTeal hover:bg-[#00a68f] text-white py-4 rounded-xl font-bold transition-all shadow-lg shadow-primaryTeal/20">
-                        Save Changes
-                    </button>
-                    <button id="resetAdmin"
-                        class="px-4 bg-gray-100 hover:bg-gray-200 text-gray-600 py-4 rounded-xl font-bold transition-all">
-                        Reset
-                    </button>
-                </div>
-            </div>
-            <p class="mt-6 text-xs text-center text-gray-400">Settings are saved locally to your browser.</p>
-        </div>
-    </div>
-
-    <script>
-        const adminTrigger = document.getElementById('adminTrigger');
-        const adminModal = document.getElementById('adminModal');
-        const closeAdmin = document.getElementById('closeAdmin');
-        const saveAdmin = document.getElementById('saveAdmin');
-        const resetAdmin = document.getElementById('resetAdmin');
-        const bgUrlInput = document.getElementById('bgUrlInput');
-        const bgFileInput = document.getElementById('bgFileInput');
-        const bgLayer = document.getElementById('bgLayer');
-
-        // Load saved background
-        function loadBackground() {
-            const savedBg = localStorage.getItem('tuskerWaysBg');
-            if (savedBg) {
-                bgLayer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${savedBg}')`;
-            }
-        }
-
-        // Open Admin Panel (Double Click on Footer)
-        adminTrigger.addEventListener('dblclick', () => {
-            adminModal.classList.remove('hidden');
-        });
-
-        // Close Admin Panel
-        closeAdmin.addEventListener('click', () => {
-            adminModal.classList.add('hidden');
-        });
-
-        // Handle File Selection
-        bgFileInput.addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    bgUrlInput.value = event.target.result; // Put base64 in the URL input for convenience
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Save Background
-        saveAdmin.addEventListener('click', () => {
-            const newUrl = bgUrlInput.value.trim();
-            if (newUrl) {
-                localStorage.setItem('tuskerWaysBg', newUrl);
-                bgLayer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${newUrl}')`;
-                adminModal.classList.add('hidden');
-                alert('Background updated successfully! (Saved in your browser)');
-            }
-        });
-
-        // Reset Background
-        resetAdmin.addEventListener('click', () => {
-            localStorage.removeItem('tuskerWaysBg');
-            bgLayer.style.backgroundImage = ''; // Falls back to CSS class
-            adminModal.classList.add('hidden');
-            location.reload();
-        });
-
-        // Initial Load
-        loadBackground();
-    </script>
 </body>
 
 </html>

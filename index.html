@@ -165,21 +165,39 @@
 
     <!-- Top Left Floating Logo -->
     <header
-        class="absolute top-0 left-0 w-full p-6 md:p-10 z-50 flex flex-col md:flex-row items-center md:items-start justify-between pointer-events-none gap-4">
+        class="absolute top-0 left-0 w-full p-6 md:p-10 z-50 flex flex-col items-center md:items-start pointer-events-none gap-5">
         <div
-            class="pointer-events-auto bg-black/30 backdrop-blur-md border border-white/20 p-3 md:p-4 rounded-3xl shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-transform hover:scale-105 duration-300 floating-logo ring-1 ring-white/10">
+            class="pointer-events-auto inline-block bg-black/30 backdrop-blur-md border border-white/20 p-3 md:p-4 rounded-3xl shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-transform hover:scale-105 duration-300 floating-logo ring-1 ring-white/10">
             <img src="logo.png" alt="Tusker Ways" class="h-16 md:h-20 lg:h-24 w-auto object-contain">
         </div>
 
-        <a href="mailto:info@tuskerways.com"
-            class="pointer-events-auto flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white/90 hover:text-white hover:bg-black/60 hover:border-white/30 text-xs md:text-sm font-medium tracking-widest uppercase transition-all duration-300 shadow-lg">
-            <svg class="w-4 h-4 md:w-5 md:h-5 text-brandGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                </path>
-            </svg>
-            info@tuskerways.com
-        </a>
+        <div class="pointer-events-auto flex flex-col sm:flex-row sm:flex-wrap items-center md:items-start justify-center md:justify-start gap-3">
+            <a href="tel:+94711503252"
+                class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white/90 hover:text-white hover:bg-black/60 hover:border-white/30 text-xs md:text-sm font-medium tracking-widest uppercase transition-all duration-300 shadow-lg">
+                <svg class="w-4 h-4 md:w-5 md:h-5 text-brandGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                +94 71 150 3252
+            </a>
+            
+            <a href="https://wa.me/94711503252" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white/90 hover:text-white hover:bg-black/60 hover:border-white/30 text-xs md:text-sm font-medium tracking-widest uppercase transition-all duration-300 shadow-lg">
+                <svg class="w-4 h-4 md:w-5 md:h-5 text-brandGold" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.031 2.051C6.442 2.051 1.907 6.587 1.907 12.176c0 1.785.467 3.52 1.353 5.06l-1.921 7.02l7.185-1.884a10.05 10.05 0 003.507.643h.004c5.589 0 10.125-4.536 10.125-10.125s-4.536-10.125-10.125-10.125zM12.031 20.34h-.003a8.38 8.38 0 01-4.276-1.168l-.307-.182l-3.179.834l.848-3.098l-.201-.321a8.375 8.375 0 01-1.282-4.47c0-4.636 3.774-8.411 8.412-8.411c2.251 0 4.363.876 5.952 2.467c1.589 1.59 2.465 3.7 2.465 5.952c-.001 4.635-3.776 8.411-8.412 8.411H12.031zm4.618-6.315c-.253-.127-1.498-.74-1.731-.823c-.231-.085-.4-.127-.569.127c-.169.253-.654.823-.801.992c-.149.169-.297.19-.55.063c-.253-.127-1.07-.394-2.039-1.256c-.754-.672-1.264-1.503-1.413-1.756c-.149-.253-.016-.39.111-.516c.114-.113.253-.296.379-.444c.127-.148.169-.253.253-.422c.085-.169.043-.317-.021-.444c-.063-.127-.569-1.373-.779-1.881c-.205-.494-.413-.427-.569-.434c-.149-.007-.318-.007-.487-.007c-.169 0-.444.063-.676.317c-.231.253-.886.866-.886 2.112s.908 2.449 1.034 2.618c.127.169 1.786 2.727 4.327 3.823c.604.261 1.076.417 1.444.534c.607.193 1.159.165 1.596.1c.489-.072 1.498-.612 1.708-1.203c.21-.591.21-1.097.148-1.204c-.065-.106-.233-.169-.487-.296z"></path>
+                </svg>
+                WhatsApp
+            </a>
+
+            <a href="mailto:info@tuskerways.com"
+                class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white/90 hover:text-white hover:bg-black/60 hover:border-white/30 text-xs md:text-sm font-medium tracking-widest uppercase transition-all duration-300 shadow-lg">
+                <svg class="w-4 h-4 md:w-5 md:h-5 text-brandGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                    </path>
+                </svg>
+                info@tuskerways.com
+            </a>
+        </div>
     </header>
 
     <!-- Main Content Layout -->

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misty Mountains — Grand Escapes — Tusker Ways</title>
+    <link href="https://db.onlinewebfonts.com/c/38b027ba0574ca66eb62f7469c1c3dcd?family=Elegant+Woman+Demo"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="theme-manager.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00c2a8',
+                        secondary: '#080b10',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --obsidian: #080b10;
+            --charcoal: #0e1117;
+            --surface: #12171f;
+            --card: #161c26;
+            --border: rgba(255, 255, 255, 0.07);
+            --teal: #00c2a8;
+            --teal-glow: rgba(0, 194, 168, 0.25);
+            --txt-primary: rgba(255, 255, 255, 0.92);
+            --txt-secondary: rgba(255, 255, 255, 0.52);
+            --txt-muted: rgba(255, 255, 255, 0.28);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--obsidian);
+            color: var(--txt-primary);
+            overflow-x: hidden;
+        }
+
+        #sf {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+                .mist {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(150px);
+            pointer-events: none;
+            z-index: -1;
+            animation: mD 45s ease-in-out infinite alternate;
+            opacity: 0.6;
+        }
+
+        .m1 {
+            width: 1200px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 194, 168, 0.45) 0%, transparent 70%);
+            top: -10%;
+            left: -20%;
+        }
+
+        .m2 {
+            width: 1100px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, transparent 70%);
+            bottom: -5%;
+            right: -10%;
+            animation-delay: -15s;
+        }
+
+        .m3 {
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(0, 194, 168, 0.25) 0%, transparent 70%);
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: mD 60s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes mD {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(150px, 80px) scale(1.2) rotate(10deg); }
+            100% { transform: translate(-50px, 150px) scale(0.9) rotate(-5deg); }
+        }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: center; }
+        .nav-inner { width: 100%; max-width: 1100px; display: flex; align-items: center; justify-content: space-between; background: rgba(8, 11, 16, .82); border: 1px solid rgba(255, 255, 255, 0.07); backdrop-filter: blur(24px); border-radius: 100px; padding: .5rem 1rem .5rem 0.6rem; }
+        .nav-logo { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo img { height: 40px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; padding: 0; margin: 0; }
+        .nav-links a { text-decoration: none; font-family: 'Outfit', sans-serif; font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.52); transition: all 0.3s; white-space: nowrap; display: flex; align-items: center; gap: 6px; padding: 0.5rem 0; }
+        .nav-links a:hover { color: #fff; }
+        .nav-cta { text-decoration: none; font-family: 'Outfit', sans-serif; font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #080b10; background: #00c2a8; padding: .6rem 1.4rem; border-radius: 100px; white-space: nowrap; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0, 194, 168, 0.2); }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0, 194, 168, 0.3); }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); min-width: 200px; padding-top: 15px; opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); z-index: 1001; }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .nav-dropdown-inner { background: #000; border: 1px solid var(--border, rgba(255,255,255,0.07)); border-radius: 16px; padding: .6rem 0; backdrop-filter: blur(20px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .nav-dropdown-inner a { display: block; padding: .65rem 1.25rem; font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.52); text-decoration: none; }
+        .nav-dropdown-inner a:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+        @media(max-width:960px) { .nav-links { display: none; } }
+
+        .hb {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hb img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.75) saturate(.95);
+        }
+
+        .ho {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(8, 11, 16, 1) 0%, rgba(8, 11, 16, .25) 45%, transparent 100%);
+        }
+
+        .hc {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 100px 1.5rem 5rem;
+            width: 100%;
+            max-width: 860px;
+        }
+
+        .he {
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .ht-title {
+            font-family: 'Elegant Woman Demo', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .hm {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .hmi {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 1rem;
+        }
+
+        .gl {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media(max-width:1000px) {
+            .gl {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sl {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .sl::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--teal-glow), transparent);
+        }
+
+        .st {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--txt-primary);
+            margin-bottom: 1.75rem;
+        }
+
+        .bt {
+            font-size: .95rem;
+            line-height: 1.8;
+            color: var(--txt-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .is {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .is::after {
+            content: '';
+            position: absolute;
+            left: 21px;
+            top: 48px;
+            bottom: -16px;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .is:last-child::after {
+            display: none;
+        }
+
+        .db {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(0, 194, 168, .12);
+            border: 1px solid rgba(0, 194, 168, .3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: .75rem;
+            font-weight: 800;
+            color: var(--teal);
+            flex-shrink: 0;
+        }
+
+        .dt {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--txt-primary);
+            margin-bottom: .4rem;
+        }
+
+        .dd {
+            font-size: .85rem;
+            line-height: 1.7;
+            color: var(--txt-secondary);
+        }
+
+        .dd li {
+            list-style: none;
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .dd li::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: bold;
+        }
+
+        .bc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            padding: 2rem;
+            position: sticky;
+            top: 7rem;
+        }
+
+        .pl {
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--txt-muted);
+            margin-bottom: .35rem;
+        }
+
+        .pv {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--teal);
+            line-height: 1;
+        }
+
+        .ps {
+            font-size: .72rem;
+            color: var(--txt-muted);
+            margin-top: .35rem;
+        }
+
+        .sep {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            margin: 1.5rem 0;
+        }
+
+        .hl {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .85rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .hl li {
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+            font-size: .83rem;
+            color: var(--txt-secondary);
+        }
+
+        .bb {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--teal);
+            color: var(--obsidian);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: .82rem;
+            padding: 1rem;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 0 22px var(--teal-glow);
+        }
+
+        .sn {
+            text-align: center;
+            font-size: .65rem;
+            color: var(--txt-muted);
+            margin-top: .75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+        }
+
+        .hc2 {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 1.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .ht2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--txt-primary);
+            margin-bottom: .5rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+        }
+
+        .hs {
+            font-size: .8rem;
+            color: var(--txt-secondary);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .cl {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            text-decoration: none;
+            padding: .6rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cl:last-child {
+            border-bottom: none;
+        }
+
+        .ci {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(0, 194, 168, .1);
+            border: 1px solid rgba(0, 194, 168, .2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--teal);
+            flex-shrink: 0;
+        }
+
+        .cll {
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--txt-muted);
+        }
+
+        .clv {
+            font-size: .82rem;
+            font-weight: 700;
+            color: var(--txt-primary);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            background: var(--charcoal);
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem 1.5rem;
+        }
+
+        .fi {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fg {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media(max-width:700px) {
+            .fg {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .flr {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            margin-bottom: .6rem;
+            text-decoration: none;
+        }
+
+        .flr img {
+            height: 26px;
+            filter: brightness(0) invert(1);
+            opacity: .7;
+        }
+
+        .flt {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .75);
+            font-size: .9rem;
+        }
+
+        .flt em {
+            color: var(--teal);
+            font-style: normal;
+        }
+
+        .ftg {
+            font-size: .75rem;
+            color: var(--txt-muted);
+            line-height: 1.7;
+            max-width: 220px;
+        }
+
+        .fct {
+            font-size: .58rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: .9rem;
+        }
+
+        .fls {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+
+        .fls a {
+            text-decoration: none;
+            font-size: .75rem;
+            color: var(--txt-muted);
+            transition: color .3s;
+        }
+
+        .fls a:hover {
+            color: var(--txt-primary);
+        }
+
+        .fb {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .fc {
+            font-size: .58rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--txt-muted);
+        }
+
+        .wa {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 200;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, .4);
+        }
+
+        .rv {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .9s, transform .9s cubic-bezier(.23, 1, .32, 1);
+        }
+
+        .rv.on {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link rel="stylesheet" href="tour-navigation.css">
+</head>
+
+<body>
+    <canvas id="sf"></canvas>
+    <div class="mist m1"></div>
+    <div class="mist m2"></div>
+    <div class="mist m3"></div>
+    <nav id="navbar">
+        <div class="nav-inner">
+            <div class="nav-side">
+                <a href="index.html" class="nav-logo"><img src="logo.png" alt="Tusker Ways"></a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">The Experience</a></li>
+                <li class="nav-dropdown">
+                    <a href="our-way.html">Our Way <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9" /></svg></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-inner">
+                            <a href="our-way.html" style="display:flex;align-items:center;gap:8px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Our Way � Overview</a>
+                            <a href="tusker-guardian.html" style="display:flex;align-items:center;gap:8px;color:#B8860B;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8860B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Tusker Guardian Project</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="signature-journeys.html">Signature Journeys <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9" /></svg></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-inner">
+                            <a href="daily-escapes.html">Daily Escapes</a>
+                            <a href="grand-escapes.html">Grand Escapes</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="sri-lanka-edit.html">The Sri Lanka Edit <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-inner">
+                            <a href="sri-lanka-edit.html" style="display:flex;align-items:center;gap:8px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Sri Lanka Edit</a>
+                            <a href="travel-tips.html" style="display:flex;align-items:center;gap:8px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Travel Tips &amp; Advice</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="nav-side right">
+                <a href="plan-escape.html" class="nav-cta hidden md:block">Plan Your Escape</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white/80 hover:text-white p-2 ml-2 transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hb"><img id="tour-hero-img"
+            src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1600" alt="Misty Mountains">
+        <div class="ho"></div>
+        <div class="hc"><span id="tour-hero-badge" class="he rv">Grand Escape</span>
+            <h1 id="tour-hero-title" class="ht-title rv">Misty<br>Mountains</h1>
+            <div class="hm rv">
+                <div class="hmi"><i data-lucide="clock" style="width:16px;height:16px;color:var(--teal)"></i><span
+                        id="tour-hero-duration">5 Days / 4 Nights</span></div>
+                <div class="hmi"><i data-lucide="map-pin" style="width:16px;height:16px;color:var(--teal)"></i><span
+                        id="tour-hero-location">Nuwara Eliya &amp; Ella</span></div>
+                <div class="hmi"><i data-lucide="star"
+                        style="width:16px;height:16px;color:var(--teal)"></i><span>Premium Luxury</span></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="gl">
+            <div>
+                <section class="rv" style="margin-bottom:3.5rem">
+                    <div class="sl">The Experience</div>
+                    <h2 class="st">About This Journey</h2>
+                    <p id="tour-desc-1" class="bt">The emerald heart of the island awaits. Our Misty Mountains journey
+                        takes you through the rolling tea estates and cascading waterfalls of the central highlands.</p>
+
+                </section>
+                <section class="rv">
+                    <div class="sl">Day by Day</div>
+                    <h2 class="st">Detailed Itinerary</h2>
+                    <div id="tour-itinerary">
+                        <div class="is">
+                            <div class="db">01</div>
+                            <div>
+                                <div class="dt">Tea Trails</div>
+                                <p class="dd">Arrival and transfer to a luxury tea bungalow. Afternoon tea tasting and
+                                    estate walk.</p>
+                            </div>
+                        </div>
+                        <div class="is">
+                            <div class="db">02</div>
+                            <div>
+                                <div class="dt">Little Adam's Peak</div>
+                                <p class="dd">Morning hike for sunrise views. Afternoon at leisure with a private chef
+                                    dinner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div>
+                <div class="bc rv">
+
+                    <ul class="hl" id="tour-highlights">
+                        <li><i data-lucide="check-circle"
+                                style="width:16px;height:16px;color:var(--teal);flex-shrink:0"></i><span
+                                class="highlight-text">Luxury Colonial Bungalows</span></li>
+                        <li><i data-lucide="check-circle"
+                                style="width:16px;height:16px;color:var(--teal);flex-shrink:0"></i><span
+                                class="highlight-text">Scenic Blue Train Experience</span></li>
+                        <li><i data-lucide="check-circle"
+                                style="width:16px;height:16px;color:var(--teal);flex-shrink:0"></i><span
+                                class="highlight-text">Private Tea Expert Guide</span></li>
+                        <li><i data-lucide="check-circle"
+                                style="width:16px;height:16px;color:var(--teal);flex-shrink:0"></i><span
+                                class="highlight-text">All Transfers Included</span></li>
+                    </ul><a href="plan-escape.html" class="bb">Check Availability</a>
+                    <p class="sn"><i data-lucide="shield-check" style="width:13px;height:13px"></i> Secure Booking
+                        Guaranteed</p>
+                </div>
+                <div class="hc2 rv">
+                    <div class="ht2"><i data-lucide="headphones" style="width:18px;height:18px;color:var(--teal)"></i>
+                        Need Help?</div>
+                    <p class="hs">Our experts are ready to personalise this journey just for you.</p><a
+                        href="https://wa.me/94711503252" target="_blank" class="cl">
+                        <div class="ci"><i data-lucide="message-circle" style="width:14px;height:14px"></i></div>
+                        <div>
+                            <div class="cll">WhatsApp</div>
+                            <div class="clv">+94 71 150 3252</div>
+                        </div>
+                    </a><a href="mailto:info@tuskerways.com" class="cl">
+                        <div class="ci"><i data-lucide="mail" style="width:14px;height:14px"></i></div>
+                        <div>
+                            <div class="cll">Email</div>
+                            <div class="clv">info@tuskerways.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <!-- Footer -->
+    <footer class="bg-secondary text-white relative pt-24 pb-12 overflow-hidden">
+        <!-- Background decorative element -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[100px] rounded-full -mr-48 -mt-48 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full -ml-32 -mb-32 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 items-start">
+                <div class="space-y-8 flex flex-col">
+                    <div class="flex flex-col items-center gap-2 bg-white/5 border border-white/10 rounded-2xl py-3 px-5 backdrop-blur-sm w-fit mx-auto md:mx-0">
+                        <span class="text-xs font-bold font-display tracking-[0.2em] text-white uppercase text-center">Tusker Ways<br><span class="text-primary">Luxury Travel</span></span>
+                        <img src="logo.png" alt="Tusker Ways" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-gray-400 leading-relaxed text-[11.5px] max-w-sm">Crafting soulful, authentic journeys across Sri Lanka. We don't just show you the island; we help you feel its pulse through luxury and authenticity.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/people/Tusker-Ways/61552265249288/" target="_blank" class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all border border-white/10 group"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white/80 group-hover:text-white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="https://wa.me/94711503252" target="_blank"
+                            class="w-12 h-12 rounded-2xl bg-[#25D366]/10 flex items-center justify-center hover:bg-[#25D366] hover:scale-110 transition-all border border-[#25D366]/20 group">
+                            <img src="images/whatsapp.svg" alt="WhatsApp" class="w-6 h-6 object-contain grayscale group-hover:grayscale-0 transition-all">
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all border border-white/10 group"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white/80 group-hover:text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                        <a href="#" class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all border border-white/10 group"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white/80 group-hover:text-white"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+                    </div>
+                                                                                                    <div class="flex gap-16 items-center pt-8 border-t border-white/5 mt-8">
+                        <a href="#" class="hover:scale-105 transition-all duration-300 drop-shadow-[0_0_20px_rgba(0,194,168,0.3)]">
+                            <img src="images/tourist.svg" onerror="this.src='images/tourist.png'" alt="Tourist" class="h-16 md:h-24 w-auto">
+                        </a>
+                        <a href="https://www.tripadvisor.com" target="_blank" class="hover:scale-105 transition-all duration-300 drop-shadow-[0_0_20px_rgba(0,194,168,0.3)]">
+                            <img src="images/tripadvisor.svg" onerror="this.src='images/tripadvisor.png'" alt="TripAdvisor" class="h-16 md:h-24 w-auto">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-[11px] uppercase tracking-[0.15em] font-bold text-primary mb-6">The Experience</h4>
+                    <ul class="space-y-2.5 text-[11.5px]">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Home</a></li>
+                        <li><a href="our-way.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Our Way</a></li>
+                        <li><a href="tusker-guardian.html" class="text-gold hover:text-yellow-400 transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-yellow-600/40 group-hover:bg-yellow-500 transition-all"></span> Guardian Project</a></li>
+                        <li><a href="signature-journeys.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Signature Journeys</a></li>
+                        <li><a href="grand-escapes.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Grand Escapes</a></li>
+                        <li><a href="daily-escapes.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Daily Escapes</a></li>
+                        <li><a href="sri-lanka-edit.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> The Sri Lanka Edit</a></li>
+                        <li><a href="plan-escape.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Plan Your Escape</a></li>
+                    </ul>
+                </div>
+
+                                <div>
+                    <h4 class="text-[11px] uppercase tracking-[0.15em] font-bold text-primary mb-6">Popular Escapes</h4>
+                    <ul class="space-y-2.5 text-[11.5px]" id="footer-popular-escapes">
+                        <li><a href="travel-tips.html" class="text-white hover:text-primary transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Travel Tips & Advice</a></li>
+                        <li><a href="daily-escapes.html?tour=0" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> The Highland & Heritage Escape</a></li>
+                        <li><a href="daily-escapes.html?tour=2" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Nature's Symphony : Coast to Cloud</a></li>
+                        <li><a href="grand-escapes.html?tour=3" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Wildlife Wonders</a></li>
+                        <li><a href="daily-escapes.html?tour=5" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Southern Shores</a></li>
+                        <li><a href="grand-escapes.html?tour=4" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary transition-all"></span> Wild Discovery & Rustic Retreats</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 h-fit">
+                    <h4 class="text-[11px] uppercase tracking-[0.15em] font-bold text-primary mb-6">Connect With Us</h4>
+                    <ul class="space-y-4 text-[11.5px]">
+                        <li class="flex items-start gap-4">
+                            <div class="p-2.5 bg-primary/20 rounded-lg text-primary"><i data-lucide="phone" class="w-4 h-4"></i></div>
+                            <div class="flex flex-col">
+                                <span class="text-[9px] text-gray-500 uppercase font-bold tracking-[0.15em]">Call or WhatsApp</span>
+                                <span class="text-gray-200 font-medium">+94 71 150 3252</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="p-2.5 bg-primary/20 rounded-lg text-primary"><i data-lucide="mail" class="w-4 h-4"></i></div>
+                            <div class="flex flex-col">
+                                <span class="text-[9px] text-gray-500 uppercase font-bold tracking-[0.15em]">Inquiries</span>
+                                <span class="text-gray-200 font-medium leading-relaxed">info@tuskerways.com<br>tuskerwaysinfo@gmail.com</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="p-2.5 bg-primary/20 rounded-lg text-primary"><i data-lucide="map-pin" class="w-4 h-4"></i></div>
+                            <div class="flex flex-col">
+                                <span class="text-[9px] text-gray-500 uppercase font-bold tracking-[0.15em]">Presence</span>
+                                <span class="text-gray-200 font-medium">Gampaha, Sri Lanka</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-xs font-bold uppercase tracking-[0.2em]">
+                <p>&copy; 2026 Tusker Ways Luxury Travel. All rights reserved.</p>
+                <div class="flex gap-8">
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        lucide.createIcons(); (function () { const c = document.getElementById('sf'), x = c.getContext('2d'); let s = []; function r() { c.width = innerWidth; c.height = innerHeight; } function i() { s = []; for (let j = 0; j < 200; j++)s.push({ x: Math.random() * c.width, y: Math.random() * c.height, r: Math.random() * 1.3 + .2, a: Math.random() * .4 + .08, sp: Math.random() * .1 + .02, d: Math.random() > .5 ? 1 : -1 }); } function d() { x.clearRect(0, 0, c.width, c.height); s.forEach(p => { p.a += p.sp * p.d * .007; if (p.a > .5 || p.a < .04) p.d *= -1; x.beginPath(); x.arc(p.x, p.y, p.r, 0, Math.PI * 2); x.fillStyle = 'rgba(160,220,255,' + p.a + ')'; x.fill(); }); requestAnimationFrame(d); } window.addEventListener('resize', () => { r(); i(); }); r(); i(); d(); })();
+        (function () {
+            const fallbackImg = "https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=1600";
+            
+            // Add error handling to all images
+            document.querySelectorAll('img').forEach(img => {
+                img.onerror = function() {
+                    if (this.src !== fallbackImg) this.src = fallbackImg;
+                };
+            });
+
+            try {
+                const s = localStorage.getItem('tusker_config');
+                if (!s) return;
+                const c = JSON.parse(s), t = (c.tourDetails || [])[1] || {}, catalogItem = (c.grandEscapes || [])[1] || {};
+                const g = id => document.getElementById(id);
+                
+                const heroImage = t.heroImage || catalogItem.image;
+                const title = t.title || catalogItem.name;
+                const duration = t.duration || catalogItem.category;
+                const description1 = t.description1 || catalogItem.description;
+
+                if (heroImage) g('tour-hero-img').src = heroImage;
+                if (title) {
+                    g('tour-hero-title').textContent = title;
+                    document.title = `${title} — Grand Escapes — Tusker Ways`;
+                }
+                if (duration) g('tour-hero-duration').textContent = duration;
+                if (t.location) g('tour-hero-location').textContent = t.location;
+                if (description1) g('tour-desc-1').textContent = description1;
+                if (t.badge && g('tour-hero-badge')) g('tour-hero-badge').textContent = t.badge;
+
+                if (t.itinerary && t.itinerary.length > 0) {
+                    const itinDiv = g('tour-itinerary');
+                    if (itinDiv) {
+                        itinDiv.innerHTML = t.itinerary.map(day => {
+                            const description = day.desc || '';
+                            const items = description.split('\n').filter(line => line.trim() !== '');
+                            const descHtml = items.length > 1 
+                                ? `<ul>${items.map(item => `<li>${item.trim()}</li>`).join('')}</ul>`
+                                : description;
+
+                            return `
+                            <div class="is">
+                                <div class="db">${day.day || ''}</div>
+                                <div>
+                                    <div class="dt">${day.title || ''}</div>
+                                    <div class="dd">${descHtml}</div>
+                                </div>
+                            </div>`;
+                        }).join('');
+                    }
+                }
+
+                if (t.highlights && t.highlights.length > 0) {
+                    const hlList = g('tour-highlights');
+                    if (hlList) {
+                        hlList.innerHTML = t.highlights.map(hl => `<li><i data-lucide="check-circle" style="width:16px;height:16px;color:var(--teal);flex-shrink:0"></i><span class="highlight-text">${hl}</span></li>`).join('');
+                        lucide.createIcons();
+                    }
+                }
+            } catch (e) {
+                console.error('Error loading config:', e);
+            }
+        })();
+        const ob = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); ob.unobserve(e.target); } }); }, { threshold: .08 }); document.querySelectorAll('.rv').forEach(el => ob.observe(el));
+    </script>
+    <!-- Floating Hub -->
+    <script src="floating-hub.js"></script>
+        <!-- Tour Navigation -->
+    <script src="tour-navigation.js"></script>
+    <script src="cookie-consent.js"></script>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[2000] bg-[#080b10]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        <button id="mobile-menu-close" class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        
+        <a href="index.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">The Experience</a>
+        <a href="our-way.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">Our Way</a>
+        <a href="signature-journeys.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">Signature Journeys</a>
+        <a href="sri-lanka-edit.html" class="text-2xl font-bold text-white hover:text-primary transition-colors">The Sri Lanka Edit</a>
+        <a href="plan-escape.html" class="bg-primary text-secondary font-bold px-8 py-3 rounded-full mt-4">Plan Your Escape</a>
+    </div>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.onclick = () => {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100');
+            };
+        }
+
+        if (menuClose && mobileMenu) {
+            menuClose.onclick = () => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100');
+            };
+        }
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.onclick = () => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100');
+            };
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+

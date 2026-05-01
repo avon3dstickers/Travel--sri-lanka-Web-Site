@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "category": "visa",
+    "keywords": "eta electronic travel authorisation visa apply online official",
+    "icon": "globe",
+    "title": "Apply only via the official ETA portal",
+    "desc": "Sri Lanka requires an Electronic Travel Authorization for most nationalities. Only use the government's official site: <a href=\"https://eta.gov.lk\" target=\"_blank\">eta.gov.lk</a>. Third-party sites charge far more and offer zero guarantee of legitimacy."
+  },
+  {
+    "id": 2,
+    "category": "visa",
+    "keywords": "eta cost price fee tourist double entry validity 30 days",
+    "icon": "credit-card",
+    "title": "ETA costs USD 50 — valid 30 days",
+    "desc": "Standard Tourist ETA costs USD 50 for most nationalities, valid for 30 days from arrival date. Double-entry option is available at a slightly higher cost. Apply at least 72 hours before your flight."
+  },
+  {
+    "id": 3,
+    "category": "visa",
+    "keywords": "visa extension overstay immigration department colombo renew",
+    "icon": "calendar-clock",
+    "title": "Extend your stay at Immigration",
+    "desc": "You can extend up to 6 months at the Department of Immigration &amp; Emigration in Colombo. Apply at least a week before your ETA expires to avoid hefty overstay fines."
+  },
+  {
+    "id": 4,
+    "category": "visa",
+    "keywords": "passport validity stamp arrival card 6 months",
+    "icon": "book-open",
+    "title": "Passport must be valid for 6+ months",
+    "desc": "Ensure your passport has at least 6 months validity beyond your intended stay. Fill out the arrival card on the plane and keep the departure card safe — you'll need it when leaving."
+  },
+  {
+    "id": 5,
+    "category": "visa",
+    "keywords": "free visa visa-free countries maldives seychelles singapore",
+    "icon": "badge-check",
+    "title": "Some nationalities get free ETAs",
+    "desc": "Citizens of the Maldives, Seychelles, and Singapore currently receive free ETAs. Confirm eligibility on <a href=\"https://eta.gov.lk\" target=\"_blank\">eta.gov.lk</a> before applying."
+  },
+  {
+    "id": 6,
+    "category": "visa",
+    "keywords": "business visa media journalist work permit volunteer film",
+    "icon": "briefcase",
+    "title": "Different ETA types for different purposes",
+    "desc": "Volunteering, working, or filming commercially? Apply for the correct ETA category — Tourist ETAs do not permit paid work. Business and media ETAs require additional supporting documents."
+  },
+  {
+    "id": 7,
+    "category": "visa",
+    "keywords": "customs declare items alcohol tobacco duty free drone cash",
+    "icon": "package-check",
+    "title": "Declare dutiable items at customs",
+    "desc": "You can bring 2 bottles of spirits (1.5L), 200 cigarettes, and gifts up to USD 250 duty-free. Always declare cash over USD 10,000. Bringing a drone? Declare it — some types require import permits."
+  },
+  {
+    "id": 8,
+    "category": "connectivity",
+    "keywords": "dialog mobitel SIM card buy tourist 4G LTE airport data pack",
+    "icon": "smartphone",
+    "title": "Buy a Dialog or Mobitel SIM at the airport",
+    "desc": "Sri Lanka's best 4G coverage comes from <strong>Dialog</strong> and <strong>Mobitel</strong>. Both have kiosks right at Bandaranaike International Airport arrivals. Bring a photo ID. Tourist data packs start from LKR 1,200 (~USD 4) for 20GB — outstanding value."
+  },
+  {
+    "id": 9,
+    "category": "connectivity",
+    "keywords": "esim digital sim roaming international data airalo holafly",
+    "icon": "signal",
+    "title": "eSIM — the queue-free alternative",
+    "desc": "If your phone supports eSIM (most flagship devices from 2021+), purchase a Sri Lanka eSIM via Airalo or Holafly before you travel. Activate it the moment you land — no airport kiosk queuing required."
+  },
+  {
+    "id": 10,
+    "category": "connectivity",
+    "keywords": "wifi hotel restaurant speed reliable slow hill country",
+    "icon": "wifi",
+    "title": "Hotel Wi-Fi varies hugely by region",
+    "desc": "Colombo luxury hotels offer fast, reliable Wi-Fi. In mountain areas (Ella, Haputale), speeds can be slow or unstable. Always have your local SIM as backup — it's your lifeline in the highlands."
+  },
+  {
+    "id": 11,
+    "category": "connectivity",
+    "keywords": "coverage dead zones national park yala sinharaja offline maps",
+    "icon": "signal-zero",
+    "title": "Dead zones in national parks",
+    "desc": "Yala, Wilpattu, and Sinharaja have very limited or zero coverage. Download offline maps via Google Maps or Maps.me before entering. Let someone know your itinerary when heading deep into wilderness."
+  },
+  {
+    "id": 12,
+    "category": "connectivity",
+    "keywords": "power plug adapter voltage type D G electricity 230V",
+    "icon": "zap",
+    "title": "Power sockets: Type D &amp; G at 230V",
+    "desc": "Sri Lanka uses Type D (3-round pin) and Type G (British 3-pin) at 230V/50Hz. Bring a universal travel adapter. Power outages can occur in rural areas — a small power bank is a must-have carry item."
+  },
+  {
+    "id": 13,
+    "category": "connectivity",
+    "keywords": "vpn social media internet freedom restrictions censorship",
+    "icon": "lock",
+    "title": "No major internet restrictions in 2026",
+    "desc": "Sri Lanka has no routine social media censorship. WhatsApp, Instagram, YouTube, and Google all work freely. A VPN may be useful only for accessing geo-locked streaming services from your home country."
+  },
+  {
+    "id": 14,
+    "category": "transport",
+    "keywords": "kandy ella train scenic railway booking reservation observation car blue train window seat",
+    "icon": "train",
+    "title": "Book the Kandy–Ella train weeks ahead",
+    "desc": "The Kandy-to-Ella scenic railway is one of the world's most spectacular train journeys. The iconic Observation Saloon (Blue Train) sells out weeks in advance. Book via <a href=\"https://www.railway.gov.lk\" target=\"_blank\">railway.gov.lk</a> or have Tusker Ways arrange it. Choose a window seat on the right-hand side (travelling toward Ella) for the best views."
+  },
+  {
+    "id": 15,
+    "category": "transport",
+    "keywords": "tuk tuk three-wheeler taxi negotiate fixed price pickme uber",
+    "icon": "car-taxi-front",
+    "title": "Always agree on a tuk-tuk fare first",
+    "desc": "Three-wheelers rarely use meters outside Colombo. Agree on the price before stepping in. PickMe and Uber operate in Sri Lanka and offer upfront pricing — highly recommended to avoid overcharging."
+  },
+  {
+    "id": 16,
+    "category": "transport",
+    "keywords": "driving car rental left side road international license chauffeur",
+    "icon": "car",
+    "title": "Sri Lanka drives on the LEFT",
+    "desc": "Cars drive on the left (British system). Self-drivers need an international driving permit alongside their national licence. Mountain roads are very narrow — hiring a local chauffeur-guide is far more comfortable and safer."
+  },
+  {
+    "id": 17,
+    "category": "transport",
+    "keywords": "bus intercity public cheap local experience air conditioned express",
+    "icon": "bus",
+    "title": "Intercity buses are incredibly affordable",
+    "desc": "Sri Lanka's bus network is extensive — often under LKR 200 for long routes. Express air-conditioned buses connect major cities. Expect crowds on local services, and brace yourself — Sri Lankan bus drivers are known for being spirited!"
+  },
+  {
+    "id": 18,
+    "category": "transport",
+    "keywords": "colombo traffic jam rush hour avoid roads expressway southern E01",
+    "icon": "traffic-cone",
+    "title": "Avoid Colombo during rush hours",
+    "desc": "Colombo traffic is severe on weekdays between 7–9am and 4–7pm. Plan transfers outside these windows. The Southern Expressway (E01) is a fast toll road — use it to reach Galle or Matara efficiently."
+  },
+  {
+    "id": 19,
+    "category": "transport",
+    "keywords": "flight domestic seaplane cinnamon air shortcut coastal",
+    "icon": "plane",
+    "title": "Seaplanes: spectacular coastal shortcuts",
+    "desc": "Cinnamon Air operates domestic seaplane routes from Colombo to Dickwella, Koggala, and beyond. A premium experience that cuts a 3-hour road journey to under 45 minutes — with breathtaking aerial views of the coastline."
+  },
+  {
+    "id": 20,
+    "category": "transport",
+    "keywords": "ferry boat island hopping lagoon nilaveli pigeon island mannar",
+    "icon": "ship",
+    "title": "Ferry services for island hopping",
+    "desc": "Boat services run to Mannar Island and some northern lagoon areas. For the southeast, small fishing boats take you to Pigeon Island from Nilaveli. Always check weather conditions before any sea journey."
+  },
+  {
+    "id": 21,
+    "category": "transport",
+    "keywords": "petrol fuel stations remote tank fill up highland rural",
+    "icon": "fuel",
+    "title": "Fill up before heading into remote areas",
+    "desc": "Petrol stations are scarce in rural highland, north, and east areas. Always start journeys with a full tank. Petrol is sold in litres and is reasonably priced — don't wait until the warning light comes on."
+  },
+  {
+    "id": 22,
+    "category": "culture",
+    "keywords": "temple dress code cover shoulders legs sarong Buddhist Hindu remove shoes",
+    "icon": "shirt",
+    "title": "Cover shoulders &amp; knees at all temples",
+    "desc": "Non-negotiable at Buddhist and Hindu temples. Shoulders and knees must be fully covered. Many temples lend sarongs at the entrance. Shoes are always removed before entering any place of worship — no exceptions."
+  },
+  {
+    "id": 23,
+    "category": "culture",
+    "keywords": "Buddha statue selfie photo pose disrespectful illegal back turning law",
+    "icon": "camera-off",
+    "title": "Never turn your back to a Buddha statue",
+    "desc": "Posing with your back to — or making irreverent gestures near — Buddha statues is both deeply disrespectful and illegal under Sri Lankan law. Tourists have been deported for this offence. Respectful photos facing the statue are always fine."
+  },
+  {
+    "id": 24,
+    "category": "culture",
+    "keywords": "left hand giving receiving food disrespectful right hand etiquette",
+    "icon": "hand",
+    "title": "Use your right hand for giving &amp; receiving",
+    "desc": "In Sri Lankan culture, the left hand is considered unclean. Use your right hand (or both hands) when receiving gifts, money, or food. This small gesture is greatly noticed and appreciated by locals."
+  },
+  {
+    "id": 25,
+    "category": "culture",
+    "keywords": "haggling bargaining market price shops negotiating souvenir gems",
+    "icon": "tag",
+    "title": "Haggling is expected at markets",
+    "desc": "Bargaining is normal at gem shops, local markets, and souvenir stalls. Fixed prices apply in supermarkets, restaurants, and formal hotels. Always be respectful when negotiating — aggressive bargaining is considered rude."
+  },
+  {
+    "id": 26,
+    "category": "culture",
+    "keywords": "poya full moon holiday public closures alcohol ban religious",
+    "icon": "moon-star",
+    "title": "Poya days: full moon public holidays",
+    "desc": "Every full moon day (Poya) is a public holiday in Sri Lanka. Alcohol sales are banned in most venues, and some shops and tourist sites close. Check a Poya calendar for 2026 when planning your itinerary — especially if you have important dinner bookings."
+  },
+  {
+    "id": 27,
+    "category": "culture",
+    "keywords": "vegetarian vegan food halal diet restrictions menu plant based",
+    "icon": "salad",
+    "title": "Sri Lanka is very vegetarian-friendly",
+    "desc": "Thanks to its Buddhist and Hindu traditions, Sri Lanka has extraordinarily rich plant-based cuisine. Dal curry, coconut roti, rice &amp; curry hoppers are safe options everywhere. Halal food is widely available in Muslim coastal areas like Kalpitiya and Batticaloa."
+  },
+  {
+    "id": 28,
+    "category": "culture",
+    "keywords": "tipping service charge restaurant staff chauffeur guide gratuity",
+    "icon": "banknote",
+    "title": "Tipping is appreciated, not mandatory",
+    "desc": "A 10% tip at restaurants is appreciated (many already add a service charge). Tipping your chauffeur-guide at the end of a tour is customary. USD 5–10 per day per person is a fair and generous standard for a full-time private guide."
+  },
+  {
+    "id": 29,
+    "category": "culture",
+    "keywords": "sinhala tamil phrases greetings ayubowan istuti nandri language",
+    "icon": "message-square-heart",
+    "title": "Learn a few words in Sinhala or Tamil",
+    "desc": "\"Ayubowan\" (ආයුබෝවන්) — \"may you live long\" — is Sri Lanka's traditional greeting and will instantly delight any local. \"Istuti\" = Thank you in Sinhala. \"Nandri\" = Thank you in Tamil. Small linguistic efforts open enormous doors."
+  },
+  {
+    "id": 30,
+    "category": "culture",
+    "keywords": "elephant riding ethical tourism sanctuaries wildlife welfare national park",
+    "icon": "paw-print",
+    "title": "Choose only ethical wildlife experiences",
+    "desc": "Avoid riding elephants or visiting venues where animals perform tricks. Opt for responsible sanctuaries and national park jeep safaris. Tusker Ways exclusively partners with ethical wildlife operators — observing animals in the wild is always the gold standard."
+  },
+  {
+    "id": 31,
+    "category": "health",
+    "keywords": "water bottled tap drinking safe purify mineral",
+    "icon": "droplets",
+    "title": "Drink only bottled or purified water",
+    "desc": "Tap water is not safe to drink for most visitors. Always buy sealed bottled water or use a travel filter or purification tablets. At luxury hotels, filtered water is often provided — always confirm with staff before drinking from taps."
+  },
+  {
+    "id": 32,
+    "category": "health",
+    "keywords": "mosquito dengue malaria repellent DEET long sleeves evening dusk",
+    "icon": "bug-off",
+    "title": "Use DEET repellent — dengue is present",
+    "desc": "Dengue fever is endemic in Sri Lanka, especially during and after monsoon seasons. Apply DEET-based repellent every few hours and wear long-sleeved clothing at dusk and dawn. Malaria risk is low in tourist areas but higher in parts of the north and east."
+  },
+  {
+    "id": 33,
+    "category": "health",
+    "keywords": "vaccines vaccination hepatitis typhoid rabies tetanus jabs travel gp",
+    "icon": "syringe",
+    "title": "Get recommended vaccinations beforehand",
+    "desc": "Consult your GP at least 6 weeks before departure. Common recommendations: Hepatitis A &amp; B, Typhoid, Tetanus, and Rabies (for rural areas or animal workers). No vaccinations are legally required to enter Sri Lanka in 2026."
+  },
+  {
+    "id": 34,
+    "category": "health",
+    "keywords": "sunscreen heat sunburn SPF50 hydration UV tropical sun hat",
+    "icon": "sun",
+    "title": "SPF 50+ sunscreen is non-negotiable",
+    "desc": "Sri Lanka sits just above the equator — UV radiation is intense year-round. Apply SPF 50+ every 2 hours when outdoors. Stay well-hydrated. Dehydration and heat exhaustion are very real risks, especially when visiting temples during hot afternoons."
+  },
+  {
+    "id": 35,
+    "category": "health",
+    "keywords": "travel insurance hospital medical emergency evacuation nawaloka private",
+    "icon": "shield-plus",
+    "title": "Comprehensive travel insurance is essential",
+    "desc": "Always travel with insurance covering medical emergencies and evacuation. Colombo has excellent private hospitals (Nawaloka, Lanka Hospitals), but rural healthcare can be very limited. Keep your insurance card and emergency numbers accessible offline at all times."
+  },
+  {
+    "id": 36,
+    "category": "safety",
+    "keywords": "safe tourist crime theft pickpocket vigilance south asia",
+    "icon": "shield-check",
+    "title": "Sri Lanka is very safe for tourists",
+    "desc": "Sri Lanka consistently ranks as one of South Asia's safest destinations. Violent crime against tourists is extremely rare. Take standard precautions: don't flaunt valuables, use hotel safes, and be aware of your surroundings in dense city centres at night."
+  },
+  {
+    "id": 37,
+    "category": "safety",
+    "keywords": "ocean swimming rip current riptide beach flag lifeguard coast conditions",
+    "icon": "waves",
+    "title": "Always check ocean swimming conditions",
+    "desc": "Sri Lanka's ocean currents can be deadly. Swim only where flags indicate safety and lifeguards are present. Southwest coast (Unawatuna, Mirissa) is safer May–November; east coast (Trinco, Arugam Bay) is safer November–April. Never swim alone."
+  },
+  {
+    "id": 38,
+    "category": "safety",
+    "keywords": "scam gem shop taxi driver overcharging tourist trap commission",
+    "icon": "alert-triangle",
+    "title": "Be wary of common tourist scams",
+    "desc": "Common scams: drivers steering you to overpriced gem shops, fake \"friendly locals\" offering free tours, and rigged meters. Book all excursions through reputable operators like Tusker Ways and always confirm prices upfront before accepting any assistance."
+  },
+  {
+    "id": 39,
+    "category": "safety",
+    "keywords": "landmines north east military restricted area demining kilinochchi mannar",
+    "icon": "triangle-alert",
+    "title": "Stick to marked paths in the northern province",
+    "desc": "Demining efforts since the 2009 end of the civil war have been extensive, but some remote northern areas may still carry risk. Never venture off marked paths in forested areas of Kilinochchi, Mullaitivu, or Mannar without a locally expert guide."
+  },
+  {
+    "id": 40,
+    "category": "safety",
+    "keywords": "emergency police ambulance fire number 119 118 111 tourist police embassy",
+    "icon": "phone-call",
+    "title": "Save emergency numbers before you land",
+    "desc": "Sri Lanka emergencies: Police <strong>119</strong> · Ambulance <strong>110</strong> · Fire <strong>111</strong> · Tourist Police <strong>+94 11 242 1052</strong>. Save your embassy's number and your travel insurance emergency line. Share your full itinerary with someone back home."
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "*.ps1",
+      "*.py",
+      "*.zip",
+      "*.txt",
+      "temp_test/**",
+      "extract_tips.js",
+      "fix_admin.py",
+      "lka.json",
+      "tips_data.json"
+    ],
+    "rewrites": [
+      {
+        "source": "/sitemap.xml",
+        "destination": "/public/sitemap.xml"
+      },
+      {
+        "source": "/google333c3ff496cc6341.html",
+        "destination": "/public/google333c3ff496cc6341.html"
+      },
+      {
+        "source": "/robots.txt",
+        "destination": "/public/robots.txt"
+      }
+    ]
+  }
+}
